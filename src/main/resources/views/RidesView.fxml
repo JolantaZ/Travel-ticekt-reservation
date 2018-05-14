@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="859.0" prefWidth="900.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.jzych.ticketreservation.controller.RidesController">
+   <children>
+      <MenuBar layoutX="1.0" layoutY="-2.0" maxWidth="900.0" prefWidth="900.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Option">
+            <items>
+              <MenuItem fx:id="m_close" mnemonicParsing="false" onAction="#closeAction" text="Close" />
+                  <MenuItem fx:id="m_loginpanel" mnemonicParsing="false" onAction="#loginPanel" text="Login Panel" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="m_about" mnemonicParsing="false" onAction="#aboutAction" text="About" />
+            </items>
+          </Menu>
+        </menus>
+         <effect>
+            <ColorAdjust brightness="0.3" contrast="0.4" hue="0.23" saturation="0.38" />
+         </effect>
+      </MenuBar>
+      <HBox layoutX="1.0" layoutY="89.0" prefHeight="70.0" prefWidth="900.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="From:" textFill="WHITE" HBox.hgrow="SOMETIMES">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="20.0" right="40.0" top="30.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="To:" textFill="WHITE" HBox.hgrow="SOMETIMES">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="20.0" right="40.0" top="30.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="Date of departure" textFill="WHITE" HBox.hgrow="SOMETIMES">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="Number of seats" textFill="WHITE" HBox.hgrow="SOMETIMES">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets top="30.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="1.0" layoutY="159.0" prefHeight="70.0" prefWidth="900.0">
+         <children>
+            <ComboBox fx:id="cmb_from" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" promptText="select" style="-fx-background-color: #ffffff;" HBox.hgrow="SOMETIMES">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ComboBox>
+            <ComboBox fx:id="cmb_to" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" promptText="select destination..." style="-fx-background-color: #ffffff;" HBox.hgrow="SOMETIMES">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ComboBox>
+            <DatePicker fx:id="dp_date" nodeOrientation="LEFT_TO_RIGHT" prefHeight="31.0" prefWidth="177.0" promptText="select date..." HBox.hgrow="SOMETIMES">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="55.0" right="40.0" />
+               </HBox.margin>
+            </DatePicker>
+            <Spinner fx:id="spin_nmb_seats" editable="false" nodeOrientation="LEFT_TO_RIGHT" HBox.hgrow="SOMETIMES">
+               <cursor> <!-- initialValue="1" max="6" min="1" -->
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="20.0" right="30.0" />
+               </HBox.margin>
+            </Spinner>
+         </children>
+      </HBox>
+      <Button fx:id="btn_search" blendMode="HARD_LIGHT" layoutX="355.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#search" prefHeight="27.0" prefWidth="127.0" text="Search" textFill="#6b0000">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_clear" blendMode="HARD_LIGHT" layoutX="14.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#clear" prefHeight="31.0" prefWidth="64.0" text="Clear" textFill="#6b0000" />
+      <TableView fx:id="table_departures" layoutX="33.0" layoutY="329.0" prefHeight="214.0" prefWidth="835.0">
+         <columns>
+            <TableColumn fx:id="col_date" prefWidth="140.0" text="Date of departure" />
+            <TableColumn fx:id="col_from" minWidth="3.0" prefWidth="181.0" text="From" />
+            <TableColumn fx:id="col_to" prefWidth="159.0" text="To" />
+            <TableColumn fx:id="col_deptime" prefWidth="146.0" text="Departure time" />
+            <TableColumn fx:id="col_arrtime" prefWidth="123.0" text="Arrival time" />
+            <TableColumn fx:id="col_price" prefWidth="85.0" text="Price [PLN]" />
+         </columns>
+      </TableView>
+      <Label alignment="TOP_CENTER" layoutX="109.0" layoutY="54.0" prefHeight="35.0" prefWidth="666.0" text="SEARCH FOR A BUS CONNECTION" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <GridPane alignment="CENTER" layoutX="34.0" layoutY="623.0" prefHeight="120.0" prefWidth="430.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="0.0" prefWidth="65.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="0.0" prefWidth="125.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="75.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="150.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <TextField fx:id="tf_name" GridPane.columnIndex="1" />
+            <TextField fx:id="tf_mail" GridPane.columnIndex="3" />
+            <TextField fx:id="tf_surname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_phone" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="21.0" prefWidth="62.0" text="Name" textFill="WHITE" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="21.0" prefWidth="64.0" text="Surname" textFill="WHITE" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="21.0" prefWidth="72.0" text="E-mail" textFill="WHITE" GridPane.columnIndex="2" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="21.0" prefWidth="70.0" text="Phone" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label layoutX="109.0" layoutY="562.0" text="Personal data for reservation: " textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_reserve" blendMode="HARD_LIGHT" layoutX="650.0" layoutY="683.0" mnemonicParsing="false" onMouseClicked="#reserve" prefHeight="51.0" prefWidth="165.0" text="RESERVE" textFill="#6b0000">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_filldata" blendMode="HARD_LIGHT" layoutX="195.0" layoutY="779.0" mnemonicParsing="false" onMouseClicked="#fullfillData" text="Fullfill data" textFill="#6b0000" />
+   </children>
+   <effect>
+      <ColorAdjust />
+   </effect>
+</AnchorPane>

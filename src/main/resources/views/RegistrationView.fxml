@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="400.0" style="-fx-background-color: #EF5350;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.jzych.ticketreservation.controller.RegisterController">
+   <children>
+      <Label layoutX="69.0" layoutY="6.0" text="USER REGISTRATION FORM" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_register" blendMode="HARD_LIGHT" cache="true" layoutX="148.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#insertInto" prefHeight="44.0" prefWidth="103.0" style="-fx-border-color: #6b0000;" text="Register" textFill="#6b0000">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Separator layoutX="-1.0" layoutY="49.0" prefHeight="0.0" prefWidth="400.0" />
+      <GridPane layoutX="45.0" layoutY="85.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="125.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="185.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Label text="Login" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Password" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Name" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Surname" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="E-mail" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Phone" textFill="WHITE" GridPane.rowIndex="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_login" promptText="enter login" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="tf_pass" promptText="enter password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_name" promptText="enter name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_surname" promptText="enter surname" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tf_mail" promptText="enter e-mail address" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tf_phone" promptText="enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <Button fx:id="btn_login" blendMode="HARD_LIGHT" layoutX="290.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#newUserLogin" text="Log in" textFill="#6b0000" />
+   </children>
+</AnchorPane>
